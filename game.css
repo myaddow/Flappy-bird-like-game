@@ -1,0 +1,150 @@
+/* 🌍 Overall page styling */
+body {
+  background-color: rgb(206, 100, 100); /* Sets a reddish background color */
+  font-size: larger;                    /* Increases base font size */
+  margin: 0;                            /* Removes default margin */
+  height: 100vh;                        /* Makes body fill full viewport height */
+  display: flex;                        /* Uses flexbox layout */
+  flex-direction: column;              /* Stacks children vertically */
+  justify-content: center;             /* Centers content vertically */
+  align-items: center;                 /* Centers content horizontally */
+  gap: 20px;                            /* Adds space between child elements */
+}
+
+/* 🏷️ Title styling */
+.title {
+  text-align: center;                  /* Centers the text */
+  color: white;                        /* Sets text color to white */
+  font-size: 2em;                      /* Makes the title larger */
+}
+
+/* 🎮 Container for buttons */
+.btn_container {
+  display: flex;                       /* Uses flexbox for layout */
+  gap: 10px;                           /* Adds space between buttons */
+}
+
+/* 🔘 General button styling */
+.btn {
+  border-radius: 10px;                /* Rounds the corners */
+  background-color: black;            /* Sets background to black */
+  color: azure;                       /* Sets text color to light blue */
+  font-size: larger;                  /* Makes text larger */
+  padding: 10px 20px;                 /* Adds space inside the button */
+  border: none;                       /* Removes default border */
+  transition: transform 0.2s ease, color 0.2s ease; /* Smooth hover effects */
+}
+
+/* ⬆️ Jump button specific styling */
+#jump {
+  border-radius: 50%;                 /* Makes it a perfect circle */
+  width: 80px;                        /* Sets width */
+  height: 80px;                       /* Sets height */
+  display: flex;                      /* Centers content inside */
+  justify-content: center;
+  align-items: center;
+}
+
+/* ✨ Hover effect for buttons */
+.btn:hover, #jump:hover {
+  cursor: pointer;                    /* Changes cursor to pointer */
+  color: chartreuse;                  /* Changes text color on hover */
+  transform: scale(1.1);              /* Slightly enlarges button on hover */
+}
+
+/* 🎮 Wrapper for game area */
+.game_wrapper {
+  display: flex;                      /* Uses flexbox */
+  flex-direction: column;            /* Stacks children vertically */
+  align-items: center;               /* Centers horizontally */
+  gap: 10px;                          /* Adds spacing between elements */
+}
+
+/* 🕹️ Main game container */
+.game_container {
+  position: relative;                /* Allows absolute positioning inside */
+  width: 600px;                      /* Sets width of game area */
+  height: 400px;                     /* Sets height of game area */
+  background-color: #87CEEB;         /* Sky blue background */
+  overflow: hidden;                  /* Hides anything outside bounds */
+  border: 2px solid #333;            /* Adds dark border */
+  border-radius: 10px;               /* Rounds corners */
+}
+
+/* 🧮 Score display box */
+.score_box {
+  position: absolute;               /* Places it inside game container */
+  top: 10px;                        /* Distance from top */
+  left: 10px;                       /* Distance from left */
+  width: 80px;                      /* Width of score box */
+  font-size: 18px;                  /* Font size */
+  text-align: center;              /* Centers the score text */
+}
+
+/* 🟡 Player styling */
+#player {
+  position: absolute;              /* Allows movement within container */
+  width: 30px;                     /* Width of player */
+  height: 30px;                    /* Height of player */
+  background-color: yellow;        /* Yellow color for visibility */
+  border-radius: 50%;              /* Makes it a circle */
+  left: 100px;                     /* Horizontal position */
+  top: 180px;                      /* Vertical position */
+  z-index: 3;                      /* Ensures player is above other elements */
+  transition: top 0.1s ease-out;   /* Smooth vertical movement */
+}
+
+/* 🚧 Pipe styling (shared by top and bottom) */
+.obstacle {
+  position: absolute;              /* Allows positioning within container */
+  width: 40px;                     /* Width of pipe */
+  background-color: #2ecc71;       /* Green pipe color */
+  border: 3px solid #27ae60;       /* Darker green border */
+  box-shadow:                      /* Adds depth with shadows */
+    inset 0 0 8px #145a32,
+    0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* 🔼 Top pipe specific styling */
+#obstacle_top {
+  top: 0;                          /* Anchored to top */
+  left: 600px;                     /* Starts off-screen to the right */
+  border-bottom-left-radius: 0;   /* Square bottom corners */
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 15px;   /* Rounded top corners */
+  border-top-right-radius: 15px;
+}
+
+/* 🔽 Bottom pipe specific styling */
+#obstacle_bottom {
+  bottom: 0;                       /* Anchored to bottom */
+  left: 600px;                     /* Starts off-screen to the right */
+  border-top-left-radius: 0;      /* Square top corners */
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 15px;/* Rounded bottom corners */
+  border-bottom-right-radius: 15px;
+}
+
+/* 🧢 Pipe cap styling (decorative ends) */
+.pipe_cap {
+  position: absolute;             /* Positioned relative to container */
+  width: 48px;                    /* Slightly wider than pipe */
+  height: 12px;                   /* Short height */
+  background: linear-gradient(to bottom, #27ae60, #1e8449); /* Gradient effect */
+  border: 2px solid #145a32;      /* Dark green border */
+  border-radius: 6px;             /* Rounded edges */
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.25); /* Adds shadow for depth */
+  z-index: 2;                     /* Sits above pipes but below player */
+}
+
+/* 📍 Positioning for top pipe cap */
+#cap_top {
+  left: 596px;                    /* Slightly offset to align with pipe */
+  top: 140px;                     /* Initial vertical position */
+}
+
+/* 📍 Positioning for bottom pipe cap */
+#cap_bottom {
+  left: 596px;                    /* Slightly offset to align with pipe */
+  bottom: 140px;                  /* Initial vertical position */
+}

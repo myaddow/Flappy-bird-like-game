@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Game To Practice Code</title>
+  <link rel="stylesheet" href="game.css"> <!-- Link to CSS file -->
+  <script src="game.js" defer></script>   <!-- Link to JS file -->
+</head>
+<body>
+  <h1 class="title">Simple Game to Practice Code</h1>
+
+  <div class="btn_container">
+    <button class="btn" id="start">Start Game</button> <!-- Start button -->
+  </div>
+
+  <div class="game_wrapper">
+    <div class="game_container">
+      <input type="text" id="score" disabled class="score_box"> <!-- Score display -->
+      <div id="player"></div>           <!-- Player element -->
+      <div class="obstacle" id="obstacle_top"></div> <!-- Top pipe -->
+      <div class="pipe_cap" id="cap_top"></div>       <!-- Top pipe cap -->
+      <div class="obstacle" id="obstacle_bottom"></div> <!-- Bottom pipe -->
+      <div class="pipe_cap" id="cap_bottom"></div>     <!-- Bottom pipe cap -->
+    </div>
+    <button class="btn" id="jump" onclick="jump()">Jump</button> <!-- Jump button -->
+  </div>
+</body>
+</html>
